@@ -12,3 +12,39 @@ Traceback (most recent call last):
   File "/Users/pavel/Desktop/socket-server/socket-server/server.py", line 9, in server
     serv_socket.bind((ip, int(port)))
 socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+2022-04-30 15:33:09,523 | ERROR | Something happened with server
+Traceback (most recent call last):
+  File "manager.py", line 52, in <module>
+    server(args.host, args.port, 'tcp')
+  File "/Users/pavel/Desktop/socket-server/socket-server/server.py", line 9, in server
+    serv_socket.bind((ip, int(port)))
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+2022-04-30 15:33:32,159 | ERROR | Something happened with server
+Traceback (most recent call last):
+  File "manager.py", line 52, in <module>
+    server(args.host, args.port, 'tcp')
+  File "/Users/pavel/Desktop/socket-server/socket-server/server.py", line 9, in server
+    serv_socket.bind((ip, int(port)))
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+2022-04-30 15:36:08,811 | ERROR | Something happened with server
+Traceback (most recent call last):
+  File "manager.py", line 53, in <module>
+    server(args.host, args.port, 'tcp')
+  File "/Users/pavel/Desktop/socket-server/socket-server/server.py", line 9, in server
+    serv_socket.bind((ip, int(port)))
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+2022-04-30 15:36:46,981 | ERROR | Something happened with server
+Traceback (most recent call last):
+  File "manager.py", line 52, in <module>
+    server(args.host, args.port, 'tcp')
+  File "/Users/pavel/Desktop/socket-server/socket-server/server.py", line 9, in server
+    serv_socket.bind((ip, int(port)))
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+2022-04-30 15:37:43,284 | ERROR | Something happened with server 
+--------------------------------------------------------
+Traceback (most recent call last):
+  File "manager.py", line 54, in <module>
+    server(args.host, args.port, 'tcp')
+  File "/Users/pavel/Desktop/socket-server/socket-server/server.py", line 9, in server
+    serv_socket.bind((ip, int(port)))
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known

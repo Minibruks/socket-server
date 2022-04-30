@@ -15,10 +15,17 @@ parser.add_argument('-o', '--output', action='store_true')
 parser.add_argument('-f', '--file_output')
 args = parser.parse_args()
 
+
+def handler(signum, frame):
+    print('\nServer terminated')
+    exit(1)
+
+
 if args.output:
     logger = logging.getLogger()
     logger.setLevel(logging.INFO)
-    formatter = logging.Formatter('%(asctime)s | %(levelname)s | %(message)s')
+    formatter = logging.Formatter('%(asctime)s | %(levelname)s | %(message)s '
+                                  '\n--------------------------------------------------------')
 
     stdout_handler = logging.StreamHandler(sys.stdout)
     stdout_handler.setLevel(logging.DEBUG)
@@ -28,13 +35,16 @@ if args.output:
 elif args.file_output:
     logger = logging.getLogger()
     logger.setLevel(logging.INFO)
-    formatter = logging.Formatter('%(asctime)s | %(levelname)s | %(message)s')
+    formatter = logging.Formatter('%(asctime)s | %(levelname)s | %(message)s '
+                                  '\n--------------------------------------------------------')
 
     file_handler = logging.FileHandler(args.file_output)
     file_handler.setLevel(logging.DEBUG)
     file_handler.setFormatter(formatter)
 
     logger.addHandler(file_handler)
+
+signal.signal(signal.SIGINT, handler)
 
 if args.server:
     try:
