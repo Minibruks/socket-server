@@ -48,3 +48,20 @@ Traceback (most recent call last):
   File "/Users/pavel/Desktop/socket-server/socket-server/server.py", line 9, in server
     serv_socket.bind((ip, int(port)))
 socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+2022-04-30 17:46:21,856 | ERROR | Something happened with server 
+--------------------------------------------------------
+Traceback (most recent call last):
+  File "kmb.py", line 54, in <module>
+    server(args.host, args.port, 'tcp')
+  File "/Users/pavel/Desktop/socket-server/socket-server/server.py", line 9, in server
+    serv_socket.bind((ip, int(port)))
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+--------------------------------------------------------
+2022-04-30 17:47:40,452 | ERROR | Something happened with server
+Traceback (most recent call last):
+  File "kmb.py", line 54, in <module>
+    server(args.host, args.port, 'tcp')
+  File "/Users/pavel/Desktop/socket-server/socket-server/server.py", line 9, in server
+    serv_socket.bind((ip, int(port)))
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known

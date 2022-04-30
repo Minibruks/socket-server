@@ -21,8 +21,9 @@ def handler(signum, frame):
     exit(1)
 
 
+logger = logging.getLogger()
+
 if args.output:
-    logger = logging.getLogger()
     logger.setLevel(logging.INFO)
     formatter = logging.Formatter('%(asctime)s | %(levelname)s | %(message)s '
                                   '\n--------------------------------------------------------')
@@ -33,10 +34,9 @@ if args.output:
 
     logger.addHandler(stdout_handler)
 elif args.file_output:
-    logger = logging.getLogger()
     logger.setLevel(logging.INFO)
-    formatter = logging.Formatter('%(asctime)s | %(levelname)s | %(message)s '
-                                  '\n--------------------------------------------------------')
+    formatter = logging.Formatter('\n--------------------------------------------------------\n'
+                                  '%(asctime)s | %(levelname)s | %(message)s')
 
     file_handler = logging.FileHandler(args.file_output)
     file_handler.setLevel(logging.DEBUG)
@@ -50,9 +50,9 @@ if args.server:
     try:
         if args.tcp and args.udp:
             print('Simultaneous use of tcp and udp is not allowed')
-        elif args.tcp:
+        elif args.tcp or (not args.tcp and not args.udp):
             server(args.host, args.port, 'tcp')
-        else:
+        elif args.udp:
             server(args.host, args.port, 'udp')
     except Exception as Argument:
         logger.exception('Something happened with server')
@@ -60,9 +60,9 @@ else:
     try:
         if args.tcp and args.udp:
             print('Simultaneous use of tcp and udp is not allowed')
-        elif args.tcp:
+        elif args.tcp or (not args.tcp and not args.udp):
             client(args.host, args.port, 'tcp')
-        else:
+        elif args.udp:
             client(args.host, args.port, 'udp')
     except Exception as Argument:
         logger.exception('Something happened with client')

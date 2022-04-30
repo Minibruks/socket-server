@@ -19,7 +19,7 @@ def server(ip, port, connection_type='tcp'):
             client_socket.sendall(data)
 
             client_socket.close()
-    else:
+    elif connection_type == 'udp':
         serv_socket = socket.socket(socket.AF_INET, type=socket.SOCK_DGRAM, proto=0)
         serv_socket.bind((ip, int(port)))
 
@@ -31,3 +31,5 @@ def server(ip, port, connection_type='tcp'):
             data = (str(client_address[0]) + ':' + str(client_address[1])).encode()
 
             serv_socket.sendto(data, client_address)
+    else:
+        print('Undefined connection type')
