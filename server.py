@@ -11,8 +11,7 @@ while True:
     print('Connected by', client_address)
 
     time.sleep(1)
-    # data = client_socket.recv(1024)
-    data = ('Your address is: ' + str(client_address[1])).encode()
+    data = (str(client_address[0]) + ':' + str(client_address[1])).encode()
 
     client_socket.sendall(data)
 
