@@ -49,7 +49,7 @@ signal.signal(signal.SIGINT, handler)
 if args.server:
     try:
         if args.tcp and args.udp:
-            print('bad')
+            print('Simultaneous use of tcp and udp is not allowed')
         elif args.tcp:
             server(args.host, args.port, 'tcp')
         else:
@@ -59,7 +59,7 @@ if args.server:
 else:
     try:
         if args.tcp and args.udp:
-            print('bad')
+            print('Simultaneous use of tcp and udp is not allowed')
         elif args.tcp:
             client(args.host, args.port, 'tcp')
         else:
