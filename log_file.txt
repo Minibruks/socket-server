@@ -1,0 +1,14 @@
+2022-04-30 15:22:02,474 | ERROR | Something happend with server
+Traceback (most recent call last):
+  File "manager.py", line 44, in <module>
+    server(args.host, args.port, 'tcp')
+  File "/Users/pavel/Desktop/socket-server/socket-server/server.py", line 9, in server
+    serv_socket.bind((ip, int(port)))
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+2022-04-30 15:22:27,935 | ERROR | Something happend with server
+Traceback (most recent call last):
+  File "manager.py", line 44, in <module>
+    server(args.host, args.port, 'tcp')
+  File "/Users/pavel/Desktop/socket-server/socket-server/server.py", line 9, in server
+    serv_socket.bind((ip, int(port)))
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
